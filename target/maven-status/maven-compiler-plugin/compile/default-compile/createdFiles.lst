@@ -1,0 +1,9 @@
+cl/tenpo/challenge/controller/OperationController.class
+cl/tenpo/challenge/service/impl/PercentageServiceImpl.class
+cl/tenpo/challenge/service/OperationService.class
+cl/tenpo/challenge/service/impl/OperationServiceImpl.class
+cl/tenpo/challenge/controller/impl/request/AddRequest.class
+cl/tenpo/challenge/service/PercentageService.class
+cl/tenpo/challenge/TechChallengeApplication.class
+cl/tenpo/challenge/controller/impl/OperationControllerImpl.class
+cl/tenpo/challenge/config/RedisConfig.class
