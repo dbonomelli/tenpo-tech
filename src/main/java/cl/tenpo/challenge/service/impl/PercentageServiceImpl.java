@@ -1,23 +1,26 @@
 package cl.tenpo.challenge.service.impl;
 
 import cl.tenpo.challenge.service.PercentageService;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.java.Log;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
 @Service
-@Slf4j
+@Log
 public class PercentageServiceImpl implements PercentageService {
 
     @Override
-    @Cacheable("Percentage")
+    @Cacheable(value = "percentageCache", key = "#percentage")
+    @Retryable(backoff = @Backoff(delay = 2000L))
     public double obtainPercentage() {
-        try{
-            //og.info("Obtaining percentage from mock service");
-
-        } catch (Exception e){
-            //og.error(e.getMessage());
+        double res = 0;
+        try {
+            res = 0.10;
+        }catch (Exception e){
+            System.out.println("error");
         }
-        return 0.10;
+        return res;
     }
 }

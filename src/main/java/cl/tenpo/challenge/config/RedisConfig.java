@@ -14,7 +14,7 @@ import java.time.Duration;
 public class RedisConfig {
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
-        RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofMinutes(30));
+        RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofMinutes(1));
         return RedisCacheManager.builder(connectionFactory).cacheDefaults(config).build();
     }
 }

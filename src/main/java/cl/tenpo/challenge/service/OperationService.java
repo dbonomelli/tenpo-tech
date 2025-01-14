@@ -1,7 +1,7 @@
 package cl.tenpo.challenge.service;
 
-import cl.tenpo.challenge.controller.impl.request.AddRequest;
+import cl.tenpo.challenge.controller.request.AddRequest;
 
 public interface OperationService {
-    int addNumbers(AddRequest request);
+    double addNumbers(AddRequest request);
 }
